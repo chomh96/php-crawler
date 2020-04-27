@@ -23,7 +23,7 @@ if(isset($results_array_1)){
   } else {
     $type = 1;
   }
-  Input($link, $results_array, $type);
+  Input($link, $results_array_1, $type);
 }
 
 if(isset($results_array_2)){
