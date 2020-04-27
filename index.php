@@ -14,9 +14,7 @@ $url_2 = 'https://www.instagram.com/explore/tags/'.$tag_2.'/'; // instagrame tag
 $results_array_1 = scrape_insta_hash($url);
 $results_array_2 = scrape_insta_hash($url_2);
 
-$results_array = array_merge($results_array_1, $results_array_2);
-
-if(isset($results_array)){
+if(isset($results_array_1)){
 
   // null => 해시태그 검색으로 넣기
   // '1' => 게시물로 넣기
@@ -27,6 +25,19 @@ if(isset($results_array)){
   }
   Input($link, $results_array, $type);
 }
+
+if(isset($results_array_2)){
+
+  // null => 해시태그 검색으로 넣기
+  // '1' => 게시물로 넣기
+  if (strpos($url_2, 'tags') !== false) {
+    $type = null;
+  } else {
+    $type = 1;
+  }
+  Input($link, $results_array_2, $type);
+}
+echo("Finish!");
 
 // ?__a=1 파일 가져오기
 function scrape_insta_hash($url) {
