@@ -25,8 +25,7 @@ if(isset($results_array)){
   } else {
     $type = 1;
   }
-  var_dump($results_array);
-  // Input($link, $results_array, $type);
+  Input($link, $results_array, $type);
 }
 
 // ?__a=1 파일 가져오기
